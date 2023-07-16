@@ -12,13 +12,13 @@ class ClientModel {
   });
 
   factory ClientModel.fromJson(Map<String, dynamic> json) {
-    return ClientModel(
-      id: json['id'],
-      fullName: json['fullName'],
-      email: json['email'],
-      //registrationDate: DateTime.tryParse(json['registrationDate']),
-    );
-  }
+  return ClientModel(
+    id: json['id'] ?? 0, // Mettez ici la valeur par défaut appropriée pour l'ID (peut-être 0 ou -1)
+    fullName: json['fullName'] ?? '', // Mettez ici la valeur par défaut appropriée pour fullName (peut-être une chaîne vide)
+    email: json['email'] ?? '', // Mettez ici la valeur par défaut appropriée pour l'e-mail (peut-être une chaîne vide)
+    //registrationDate: DateTime.tryParse(json['registrationDate']),
+  );
+}
 
   Map<String, dynamic> toJson() {
     return {

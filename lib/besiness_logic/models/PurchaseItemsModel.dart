@@ -22,17 +22,27 @@ class PurchaseItemModel {
       'product': product?.toJson(),
       'price': price,
       'quantity': quantity,
-      //'purchase': purchase?.toJson(),
+      'purchase': purchase?.toJson(),
     };
   }
 
-  factory PurchaseItemModel.fromJson(Map<String, dynamic> json) {
+  factory PurchaseItemModel.fromJson(Map<String, dynamic>? json) {
+    if (json == null) {
+      return PurchaseItemModel(
+        id: null,
+        product: null,
+        price: null,
+        quantity: null,
+        purchase: null,
+      );
+    }
+
     return PurchaseItemModel(
       id: json['id'],
-      product: ProductModel.fromJson(json['product']),
+      product: json['product'] != null ? ProductModel.fromJson(json['product']) : null,
       price: json['price'],
       quantity: json['quantity'],
-     // purchase: PurchaseModel.fromJson(json['purchase']),
+      purchase: json['purchase'] != null ? PurchaseModel.fromJson(json['purchase']) : null,
     );
   }
 }

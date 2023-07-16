@@ -6,7 +6,7 @@ import '../besiness_logic/models/PurchaseModel.dart';
 import '../besiness_logic/models/ClientModel.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-
+import '../main.dart';
 class Purchase extends StatefulWidget {
   @override
   _PurchaseState createState() => _PurchaseState();
@@ -97,6 +97,7 @@ void fetchClients() async {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height:60.0),
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Référence',
@@ -285,6 +286,12 @@ void fetchClients() async {
                            referenceController3.clear();
                            _selectedClient = null;
                            _selectedTag = null;
+
+                            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()
+            ),
+          );
                           },
                           child: Text('Valider'),
                         ),
@@ -294,7 +301,11 @@ void fetchClients() async {
                             primary: Colors.red,
                           ),
                           onPressed: () {
-                            // Code pour annuler
+                                     Navigator.push(
+                                       context,
+                                     MaterialPageRoute(builder: (context) => MyApp()
+                            ),
+                           );
                           },
                           child: Text('Annuler'),
                         ),

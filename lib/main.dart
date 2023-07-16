@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/purchase.dart';
 import 'widgets/purchaseitem.dart';
+import 'widgets/PurchaseListWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,28 +13,29 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-enum ActiveTab { purchase, purchaseItem }
+enum ActiveTab { purchaseListWidget, purchaseItem }
 
 class _MyAppState extends State<MyApp> {
-  ActiveTab activeTab = ActiveTab.purchase;
+  ActiveTab activeTab = ActiveTab.purchaseListWidget;
   Color _buttonColor1 = Colors.grey; // Couleur initiale du bouton
-  Color _buttonColor2 = Colors.blue; 
-  void _changeColor() {
-    setState(() {
-      if(_buttonColor1==Colors.blue){
+  Color _buttonColor2 = Colors.blue;
+  void _changeColor1() {
+    setState(() { 
         _buttonColor1=Colors.grey;
         _buttonColor2=Colors.blue;
-      }else{
+    });
+  }
+  void _changeColor2() {
+    setState(() {
         _buttonColor1=Colors.blue;
         _buttonColor2=Colors.grey;
-      }
     });
   }
 
   Widget _buildActiveWidget() {
     switch (activeTab) {
-      case ActiveTab.purchase:
-        return Purchase();
+      case ActiveTab.purchaseListWidget:
+        return purchaseListWidget();
       case ActiveTab.purchaseItem:
         return PurchaseItemsWidget();
       default:
@@ -60,9 +62,9 @@ class _MyAppState extends State<MyApp> {
                          ),
                   onPressed: () {
                     setState(() {
-                      activeTab = ActiveTab.purchase;
+                      activeTab = ActiveTab.purchaseListWidget;
                     });
-                    _changeColor();
+                    _changeColor1();
                     
                   },
                   child: Text('Purchase'),
@@ -75,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                     setState(() {
                       activeTab = ActiveTab.purchaseItem;
                     });
-                    _changeColor();
+                    _changeColor2();
                   },
                   child: Text('Purchase Item'),
                 ),

@@ -186,7 +186,12 @@ List<DropdownMenuItem<String>> getDropdownItems() {
                 ),
               ),
               SizedBox(height: 16.0),
-              ListView.separated(
+               Container(
+            decoration: BoxDecoration(
+             border: Border.all(color: Colors.blue, width: 1.0),
+              borderRadius: BorderRadius.all(Radius.circular(8.0)), // Optional: Add rounded corners
+                ),
+             child: ListView.separated(
                 separatorBuilder: (BuildContext context, int index) => Divider(
                   color: Colors.grey, // Couleur de la ligne
                   thickness: 1.0, // Épaisseur de la ligne
@@ -234,6 +239,7 @@ List<DropdownMenuItem<String>> getDropdownItems() {
                   );
                 },
               ),
+               ),
               SizedBox(height: 16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

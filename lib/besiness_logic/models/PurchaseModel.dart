@@ -23,14 +23,19 @@ class PurchaseModel {
     // this.purchaseTag,
   });
 
-  factory PurchaseModel.fromJson(Map<String, dynamic> json) {
+  factory PurchaseModel.fromJson(Map<String, dynamic>? json) {
+    if (json == null) {
+      // Gérer le cas où le JSON est nul
+      return PurchaseModel(id:0, reference: '');
+    }
+
     return PurchaseModel(
       id: json['id'],
       reference: json['reference'],
       image: json['image'],
       total: json['total'],
       description: json['description'],
-      client: ClientModel.fromJson(json['client']),
+      client: json['client'] != null ? ClientModel.fromJson(json['client']) : null,
       purchaseItems: json['purchaseItems'] != null
           ? (json['purchaseItems'] as List<dynamic>)
               .map((item) => PurchaseItemModel.fromJson(item))
@@ -46,7 +51,9 @@ class PurchaseModel {
 
   Map<String, dynamic> toJson() {
     return {
+      'id':id,
       'reference': reference,
+      'image':image,
       'total': total,
       'description': description,
       'client': client?.toJson(),
