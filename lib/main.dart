@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 import 'package:fluttergenerator/widgets/purchase/list/PurchaseListWidget.dart';
-import 'package:fluttergenerator/widgets/purchase/purchaseitem.dart';
+import 'package:fluttergenerator/widgets/purchaseItem/create/purchaseitem.dart';
 
 void main() {
   runApp(MyApp());
