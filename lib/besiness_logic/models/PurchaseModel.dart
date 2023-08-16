@@ -1,6 +1,7 @@
-import '../models/ClientModel.dart';
-import '../models/PurchaseItemsModel.dart';
-import '../models/PurchaseTagModel.dart';
+
+
+import 'package:fluttergenerator/besiness_logic/models/ClientModel.dart';
+import 'package:fluttergenerator/besiness_logic/models/PurchaseItemsModel.dart';
 
 class PurchaseModel {
   int? id;

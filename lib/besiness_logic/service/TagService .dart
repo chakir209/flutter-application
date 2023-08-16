@@ -1,5 +1,6 @@
 import 'dart:convert';
-import '../models/TagModel.dart';
+
+import 'package:fluttergenerator/besiness_logic/models/TagModel.dart';
 import 'package:http/http.dart' as http;
 class TagService{
 Future<List<TagModel>> fetchAllTag() async {

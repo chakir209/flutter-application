@@ -1,5 +1,6 @@
 import 'dart:convert';
-import '../models/ProductModel.dart';
+
+import 'package:fluttergenerator/besiness_logic/models/ProductModel.dart';
 import 'package:http/http.dart' as http;
 class ProductService{
 Future<List<ProductModel>> fetchAllProduct() async {

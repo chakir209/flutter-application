@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'widgets/purchase.dart';
-import 'widgets/purchaseitem.dart';
-import 'widgets/PurchaseListWidget.dart';
+
 import 'package:flutter/material.dart';
+import 'package:fluttergenerator/widgets/purchase/list/PurchaseListWidget.dart';
+import 'package:fluttergenerator/widgets/purchase/purchaseitem.dart';
 
 void main() {
   runApp(MyApp());

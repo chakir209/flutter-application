@@ -1,5 +1,6 @@
 import 'dart:convert';
-import '../models/ClientModel.dart';
+
+import 'package:fluttergenerator/besiness_logic/models/ClientModel.dart';
 import 'package:http/http.dart' as http;
 class ClientService{
 Future<List<ClientModel>> fetchAllClient() async {

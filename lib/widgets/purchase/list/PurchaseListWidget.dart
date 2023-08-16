@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergenerator/besiness_logic/models/ProductModel.dart';
 import 'dart:developer';
-import '../besiness_logic/service/ProductService.dart';
-import '../besiness_logic/service/PurchaseService.dart';
-import '../besiness_logic/models/ProductModel.dart';
-import '../besiness_logic/models/PurchaseItemsModel.dart';
-import '../besiness_logic/models/PurchaseModel.dart';
-import './purchase.dart';
+
+import 'package:fluttergenerator/besiness_logic/models/PurchaseModel.dart';
+import 'package:fluttergenerator/besiness_logic/service/ProductService.dart';
+import 'package:fluttergenerator/besiness_logic/service/PurchaseService.dart';
+import 'package:fluttergenerator/widgets/purchase/create/purchase.dart';
+
 class purchaseListWidget extends StatefulWidget {
   @override
   _PurchaseListWidgetState createState() => _PurchaseListWidgetState();

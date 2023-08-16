@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'package:fluttergenerator/besiness_logic/models/PurchaseModel.dart';
 import 'package:http/http.dart' as http;
-import '../models/PurchaseModel.dart';
+
 
 class PurchaseService {        
   static const String baseUrl = 'http://192.168.43.182:8036/api/admin/purchase/';
